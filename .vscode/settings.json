@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "common.h": "c",
+        "string_view": "c",
+        "linear_list.h": "c",
+        "stdlib.h": "c"
+    }
+}
