@@ -12,7 +12,7 @@
  *          2.双循环链表
  * *************************
  ***************************/
-#include "../common.h"
+#include "common.h"
 
 #define S_SIZE_INIT 20
 #define S_SIZE_STEP 10
@@ -30,10 +30,10 @@ int s_get(int index, SequenceList *sequence_list);
 /*查看所有 */
 void s_get_all(SequenceList *sequence_list);
 /*插入 */
-int s_insert(int index,Element element, SequenceList *sequence_list);
+int s_insert(int index, Element element, SequenceList *sequence_list);
 /*删除 */
 int s_del(int index, SequenceList *sequence_list);
 /*修改 */
-int s_edit(int index,Element element, SequenceList *sequence_list);
+int s_edit(int index, Element element, SequenceList *sequence_list);
 /*销毁 */
 void s_destory(SequenceList *sequence_list);

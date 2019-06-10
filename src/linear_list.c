@@ -1,5 +1,4 @@
-
-#include "linear_list.h"
+#include "../include/linear_list.h"
 
 /*节点元素 */
 struct Element
@@ -17,9 +16,16 @@ struct SequenceList
 /*初始化 */
 int s_init(SequenceList *sequence_list)
 {
+    sequence_list = (SequenceList *)malloc(sizeof(SequenceList));
+    if (sequence_list == NULL)
+    {
+        return FAILURE; //如果分配空间失败，返回失败标志
+    }
     sequence_list->data = (Element *)calloc(S_SIZE_INIT, sizeof(Element)); //初始化起始指针，分配初始化空间
     if (sequence_list->data == NULL)
-        return FAILURE;                      //如果分配空间失败，返回失败标志
+    {
+        return FAILURE; //如果分配空间失败，返回失败标志
+    }
     sequence_list->size_total = S_SIZE_INIT; //初始化总大小
     sequence_list->size_used = 0;            //初始化已使用大小
     printf("SUCCESS");
@@ -31,7 +37,7 @@ int s_get(int index, SequenceList *sequence_list)
 {
     if (index >= sequence_list->size_total || index < 0)
         return FAILURE; //index参数错误，返回失败标志
-    print("%s", sequence_list->data[index]);
+    printf("%s", sequence_list->data[index].data);
     return SUCCESS; //返回成功标志
 }
 
@@ -41,7 +47,7 @@ void s_get_all(SequenceList *sequence_list)
     Element *e;                                                                            //用于遍历的临时变量
     for (e = sequence_list->data; e < sequence_list->data + sequence_list->size_used; e++) //遍历
     {
-        print("%s", *e->data);
+        printf("%s", e->data);
     }
 }
 
