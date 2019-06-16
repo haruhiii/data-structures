@@ -10,7 +10,7 @@ LIBRARIES	:=
 
 ifeq ($(OS),Windows_NT)
 EXECUTABLE	:= main.exe
-RM 			:= del
+RM			:= del
 else
 EXECUTABLE	:= main
 endif
